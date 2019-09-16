@@ -16,7 +16,7 @@ pipeline {
 
             stage ('Build') {
                 steps {
-                    sh 'nohup mvn -DskipTests spring-boot:run &'
+                    sh 'nohup mvn -B -DskipTests spring-boot:run &'
                 }
                 post {
                     success {
