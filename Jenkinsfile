@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'mvn test'
                 sh 'mvn spring-boot:run'
             }
         }
