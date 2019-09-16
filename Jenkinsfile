@@ -18,11 +18,6 @@ pipeline {
                 steps {
                     sh 'nohup mvn -B -DskipTests spring-boot:run &'
                 }
-                post {
-                    success {
-                        junit 'target/surefire-reports/**/*.xml'
-                    }
-                }
             }
         }
 }
