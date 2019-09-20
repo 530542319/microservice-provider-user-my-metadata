@@ -1,7 +1,7 @@
 pipeline {
     agent any
         environment {
-            IMAGE_NAME = 'msProvider'
+            IMAGE_NAME = 'msprovider'
             TAG_NAME = 'latest'
         }
         tools {
