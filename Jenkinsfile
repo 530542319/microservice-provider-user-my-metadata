@@ -20,6 +20,7 @@ pipeline {
 
             stage ('Build') {
                 steps {
+                    sh 'maven package'
                     sh 'docker build . -t ${IMAGE_NAME}:${TAG_NAME}'
                     //sh 'mvn -B -DskipTests spring-boot:run'
                 }
