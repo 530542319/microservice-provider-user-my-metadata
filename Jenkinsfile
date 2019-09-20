@@ -3,6 +3,7 @@ pipeline {
         environment {
             IMAGE_NAME = 'msprovider'
             TAG_NAME = 'latest'
+            APP_NAME = 'msprovider'
         }
         tools {
             maven 'Maven 3.3.9'
@@ -22,6 +23,7 @@ pipeline {
                 steps {
                     sh 'mvn package'
                     sh 'docker build -t ${IMAGE_NAME}:${TAG_NAME} .'
+                    sh 'docker run --name ${APP_NAME} -p 8000 ${IMAGE_NAME}:${TAG_NAME}'
                     //sh 'mvn -B -DskipTests spring-boot:run'
                 }
             }
