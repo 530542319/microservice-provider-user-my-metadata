@@ -1,5 +1,9 @@
 pipeline {
     agent any
+        environment {
+            IMAGE_NAME = 'msProvider'
+            TAG_NAME = 'latest'
+        }
         tools {
             maven 'Maven 3.3.9'
             jdk 'jdk8'
@@ -16,7 +20,8 @@ pipeline {
 
             stage ('Build') {
                 steps {
-                    sh 'mvn -B -DskipTests spring-boot:run'
+                    sh 'docker build . -t ${IMAGE_NAME}:${TAG_NAME}'
+                    //sh 'mvn -B -DskipTests spring-boot:run'
                 }
             }
         }
