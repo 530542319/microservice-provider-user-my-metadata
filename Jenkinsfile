@@ -25,7 +25,7 @@ pipeline {
                     sh 'docker build -t ${IMAGE_NAME}:${TAG_NAME} .'
                     sh 'docker stop ${APP_NAME}'
                     sh 'docker rm ${APP_NAME}'
-                    sh 'docker run -d --name ${APP_NAME} -p 8000:8000 ${IMAGE_NAME}:${TAG_NAME}'
+                    sh 'docker run -d --name ${APP_NAME} -p 192.168.56.1/8000:8000 ${IMAGE_NAME}:${TAG_NAME}'
                     //sh 'mvn -B -DskipTests spring-boot:run'
                 }
             }
