@@ -1,4 +1,4 @@
-FROM openjdk:8u181-jdk-alpine3.8
+FROM dockette/openjdk8
 
 WORKDIR /app
 
